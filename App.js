@@ -7,8 +7,7 @@ import {
     TouchableWithoutFeedback,
     Dimensions,
     Modal,
-    Image,
-    TouchableOpacity
+    Image
 } from 'react-native';
 import ImageElement from './app/components/ImageElement';
 
@@ -55,10 +54,8 @@ export default class SearchImages extends React.Component {
     return (
         <ScrollView>
             <View style={styles.container}>
-                <TouchableOpacity style={styles.fixedBackBlock}>
-                    <Image source={this.state.imgBackArrow} style={styles.fixedBack}></Image>
+                <Image source={this.state.imgBackArrow} style={styles.fixedBack}></Image>
                     {/*так и не смог сделать кнопку сидячей на одном месте..*/}
-                </TouchableOpacity>
                 <Modal
                     style={styles.modal}
                     animationType={'fade'}
@@ -89,11 +86,9 @@ const styles = StyleSheet.create({
         position: 'relative',
     },
     fixedBack: {
+        position: 'absolute',
         width: 100,
         height: 100,
-    },
-    fixedBackBlock: {
-        position: 'absolute',
         top: 15,
         left: 15,
         right: 0,
